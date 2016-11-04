@@ -7,5 +7,6 @@ module ApplicationHelper
 			@current_student = Student.find_by_id(session[:student_id])
 		end
 	end
+
 end
 
