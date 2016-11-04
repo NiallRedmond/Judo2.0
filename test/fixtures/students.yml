@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student_name: MyString
+  email: MyString
+  dob: 2016-10-09
+  belt: MyString
+  gender: false
+  photo: MyString
+  score: 1
+  judo_class_id: 1
+  password_digest: MyString
+
+two:
+  student_name: MyString
+  email: MyString
+  dob: 2016-10-09
+  belt: MyString
+  gender: false
+  photo: MyString
+  score: 1
+  judo_class_id: 1
+  password_digest: MyString

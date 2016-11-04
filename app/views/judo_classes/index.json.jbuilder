@@ -1,0 +1,1 @@
+json.array! @judo_classes, partial: 'judo_classes/judo_class', as: :judo_class

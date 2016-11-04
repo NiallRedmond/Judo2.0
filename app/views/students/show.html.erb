@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Student name:</strong>
+  <%= @student.student_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @student.email %>
+</p>
+
+<p>
+  <strong>Dob:</strong>
+  <%= @student.dob %>
+</p>
+
+<p>
+    <strong>Age:</strong>
+    <%= @student.age %>
+</p>
+
+<p>
+  <strong>Belt:</strong>
+  <%= @student.belt %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <% if @student.gender == false %>
+	<% gen = 'male'%>
+	<%= gen %>
+  <% else %>
+  <% gen = 'female'%>
+	<%= gen %>
+  <%end%>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+   <%= image_tag(@student.photo, :alt => "No image uploaded", :size => "64x64") %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @student.score %>
+</p>
+
+<p>
+  <strong>Judo class:</strong>
+  <%= @student.judo_class.class_name %>
+</p>
+
+
+
+<p>
+<% @student.matches.each do |match| %>
+	<br>
+	<%=match.match_name%>
+<%end%>
+
+</p>
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>

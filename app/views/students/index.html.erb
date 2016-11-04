@@ -1,0 +1,50 @@
+
+
+<head>
+
+</head>
+<header>
+   <h1>Student List</h1>
+</header>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Student name</th>
+      <th>Email</th>
+      <th>Dob</th>
+      <th>Belt</th>
+      <th>Gender</th>
+      <th>Photo</th>
+      <th>Score</th>
+      <th>Judo class</th>
+      <th>Password digest</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.student_name %></td>
+        <td><%= student.email %></td>
+        <td><%= student.dob %></td>
+        <td><%= student.belt %></td>
+        <td><%= student.gender %></td>
+        <td><%= student.photo %></td>
+        <td><%= student.score %></td>
+        <td><%= student.judo_class_id %></td>
+        
+        <td><%= link_to 'Show', student %></td>
+        <td><%= link_to 'Edit', edit_student_path(student) %></td>
+        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+	
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Student', new_student_path %>

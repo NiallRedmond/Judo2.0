@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Belt level:</strong>
+  <%= @judo_class.belt_level %>
+</p>
+
+<p>
+  <strong>Class name:</strong>
+  <%= @judo_class.class_name %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @judo_class.day %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @judo_class.time %>
+</p>
+
+<p>
+  <strong>Teacher name:</strong>
+  <%= @judo_class.teacher_name %>
+</p>
+
+<p>
+<strong>Students currently enrolled:</strong>
+<% @judo_class.students.each do |student| %>
+	<br>
+	<%=student.student_name%>
+<%end%>
+
+</p>
+
+
+<%= link_to 'Edit', edit_judo_class_path(@judo_class) %> |
+<%= link_to 'Back', judo_classes_path %>
+
+<h2>Comments:</h2>
+	<%=form_for([@judo_class, Comment.new]) do |f|%>
+		<%=f.text_area :content, :rows => 4, :cols => 40 %>
+		<div class ="actions">
+			<%= f.submit "Post a Comment"%>
+		</div>
+	<%end%>
+	
+<% if @judo_class.comments.empty?%>
+		<h3>You are the first to comment</h3>
+<%else%>
+	<h2>Comments:</h2>
+	<% @judo_class.comments.reverse.each do |comment| %>
+		<%= comment.content %>
+		<p><%= time_ago_in_words(comment.created_at)%> ago by
+		<%=comment.student.student_name%></p>
+	<%end%>
+<%end%>

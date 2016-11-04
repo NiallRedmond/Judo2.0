@@ -1,0 +1,66 @@
+<%= form_for(@student) do |f| %>
+  <% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% @student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :student_name %><br>
+    <%= f.text_field :student_name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :dob %><br>
+    <%= f.date_select :dob, { :include_blank => true, :start_year => 2000, :end_year => 1906 } %>
+  </div>
+  <div class="field">
+    <%= f.label :belt %><br>
+    <%= f.text_field :belt %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br>
+	<strong>M|F</strong></br>
+    <%= f.radio_button :gender, "0" %>
+	<%= f.radio_button :gender, "1" %>
+  </div>
+  
+
+  
+  <div class="field">
+    <%= f.label :photo %><br>
+    <%= f.text_field :photo %>
+  </div>
+  <div class="field">
+    <%= f.label :score %><br>
+    <%= f.number_field :score %>
+  </div>
+  <div class="field">
+    <%= f.label :judo_class_id %><br>
+
+	<%= f.collection_select :judo_class_id, JudoClass.all, :id, :class_name%> 
+
+  </div>
+  <div class="field">
+    <%= f.label :password%><br>
+    <%= f.password_field :password %>
+  </div>
+  
+   <div class="field">
+    <%= f.label :password_confirmation %><br/>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,1 @@
+json.partial! "judo_classes/judo_class", judo_class: @judo_class
