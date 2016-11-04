@@ -4,4 +4,7 @@ class PagesController < ApplicationController
 
   def about
   end
+  
+  def shoulder_throw
+  end
 end
