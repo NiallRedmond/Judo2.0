@@ -13,6 +13,7 @@
 <div id = "banner">
 	<%= image_tag("judoiconjpg.jpg", :size => "50x50")%>
 	<%= "Dit Judo Club" %>
+
 </div>
 	
 
@@ -50,9 +51,14 @@
             <li><a href="https://www.youtube.com/watch?v=u94WKnybAcw">Arm bar</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="https://www.youtube.com/watch?v=uXaOj2hmPE0">Stretching</a></li>
+			<li></li>
           </ul>
         </li>
+		<li>Search Judo classes, enter a belt level:<%= render 'judo_classes/search' %></li>
+		
+		
       </ul>
+	  
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

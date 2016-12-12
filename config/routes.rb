@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :judo_classes
   
+  get 'search', :to=> 'judo_classes#search'
   
 	resources :judo_classes do
 		resources :comments

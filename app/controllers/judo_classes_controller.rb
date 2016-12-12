@@ -36,6 +36,18 @@ class JudoClassesController < ApplicationController
       end
     end
   end
+  
+    def search
+	@judo_classes = JudoClass.search params[:query]
+		unless @judo_classes.empty? 
+		render 'index' 
+		else
+		flash[:notice] = 'No record matches that search'
+		render 'index' 
+		end
+	end
+  
+  
 
   # PATCH/PUT /judo_classes/1
   # PATCH/PUT /judo_classes/1.json

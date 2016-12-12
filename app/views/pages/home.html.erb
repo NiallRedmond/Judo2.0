@@ -9,12 +9,15 @@
 </div>
 
 <div>
-<Strong>Post a match:</strong>
-<%= link_to 'New Match', new_match_path %>
+	<Strong>Post a match:</strong>
+	<%= link_to 'New Match', new_match_path %>
 </div>
 
-
-
+<div>
+	<br>
+	Search Judo classes, enter a belt level:<%= render 'judo_classes/search' %>
+	<br>
+</div>
 
 <div id="slideshow" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
