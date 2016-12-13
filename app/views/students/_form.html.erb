@@ -25,17 +25,18 @@
   </div>
   <div class="field">
     <%= f.label :belt %><br>
-    <%= f.text_field :belt %>
+    <%= f.select :belt, ['White', 'Yellow', 'Orange', 'Green', 'Blue', 'Brown', 'Black'] %>
   </div>
+  
+
+  
   <div class="field">
     <%= f.label :gender %><br>
 	<strong>M|F</strong></br>
     <%= f.radio_button :gender, "0" %>
 	<%= f.radio_button :gender, "1" %>
   </div>
-  
-
-  
+ 
   <div class="field">
     <%= f.label :photo %><br>
     <%= f.text_field :photo %>

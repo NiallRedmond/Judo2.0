@@ -1,4 +1,4 @@
-
+<% if admin? %>
 <head>
 
 </head>
@@ -33,3 +33,7 @@
 <br>
 
 <%= link_to 'New Comment', new_comment_path %>
+
+<% else%>
+<h4><i><font color=red>Sorry, you have to be an admin to view this page.</font></i></h4>
+<% end %>

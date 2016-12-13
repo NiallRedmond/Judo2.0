@@ -28,12 +28,15 @@
         <td><%= judo_class.teacher_name %></td>
         <td><%= link_to 'Show', judo_class %></td>
         <td><%= link_to 'Edit', edit_judo_class_path(judo_class) %></td>
+		<% if admin? %>
         <td><%= link_to 'Destroy', judo_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+<h2>All training sessions take place in DIT Kevin Street.</h2>
+<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{53.337376},#{-6.267286}&markers=#{53.337376},#{-6.267286}&zoom=18&size=640x400&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8"%>
 
-<%= link_to 'New Judo class', new_judo_class_path %>

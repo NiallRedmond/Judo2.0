@@ -1,5 +1,5 @@
 
-
+<% if admin? %>
 <head>
 
 </head>
@@ -43,8 +43,12 @@
         <td><%= student.judo_class.class_name %></td>
         
         <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+		<td><%= link_to 'Edit', edit_student_path(student) %></td> 
+
+		<% if admin? %> 
+			<td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<%end%>
       </tr>
     <% end %>
 	
@@ -54,3 +58,7 @@
 <br>
 
 <%= link_to 'New Student', new_student_path %>
+
+<% else%>
+<h4><i><font color=red>Sorry, you have to be an admin to view this page.</font></i></h4>
+<% end %>

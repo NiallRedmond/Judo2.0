@@ -5,12 +5,7 @@ class ApplicationController < ActionController::Base
   
   include ApplicationHelper
   
-  def authorise
-	unless signed_in?
-		store_location
-		redirect_to login_path, :notice => "Please sign in to access this page."
-	end
-  end
+
   
     def admin
 	if admin?
@@ -18,7 +13,12 @@ class ApplicationController < ActionController::Base
 		redirect_to root_path, :notice => "You must be an admin to access this page."
 	end
   end
-  
+    def authorise
+	unless signed_in?
+		store_location
+		redirect_to login_path, :notice => "Please sign in to access this page."
+	end
+  end
 
   
 

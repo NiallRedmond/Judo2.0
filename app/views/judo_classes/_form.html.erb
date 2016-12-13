@@ -15,7 +15,7 @@
 
   <div class="field">
     <%= f.label :belt_level %><br>
-    <%= f.text_field :belt_level %>
+  <%= f.select :belt_level, ['White', 'Yellow', 'Orange', 'Green', 'Blue', 'Brown', 'Black'] %>
   </div>
   <div class="field">
     <%= f.label :class_name %><br>
@@ -37,6 +37,7 @@
     <%= f.submit %>
   </div>
 <% end %>
+
 
 <% else%>
 <h4><i><font color=red>Sorry, you have to be an admin create a new class.</font></i></h4>

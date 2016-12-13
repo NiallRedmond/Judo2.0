@@ -6,8 +6,12 @@
 </p>
 
 <p>
-  <strong>Victory:</strong>
-  <%= @match.result %>
+  <strong>Victor:</strong>
+  <% if @match.result == true %>
+  <%=@match.student.student_name%>
+  <% else %>
+  <%= @match.opposition.student_name %>
+  <% end %>
 </p>
 
 <p>
@@ -21,7 +25,7 @@
 </p>
 <p>
   <strong>Opponent:</strong>
-  <%= @match.opponent %>
+  <%= @match.opposition.student_name %>
 </p>
 
 <%= link_to 'Edit', edit_match_path(@match) %> |
