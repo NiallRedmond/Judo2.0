@@ -40,3 +40,4 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 gem 'coffee-script-source','1.8.0'
+gem 'geocoder'

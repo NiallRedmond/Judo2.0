@@ -12,6 +12,18 @@ class ApplicationController < ActionController::Base
 	end
   end
   
+    def admin
+	if admin?
+		store_location
+		redirect_to root_path, :notice => "You must be an admin to access this page."
+	end
+  end
+  
+
+  
+
+
+  
  private
 	def store_location
 		session[:return_to] = request.fullpath

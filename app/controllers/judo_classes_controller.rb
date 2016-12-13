@@ -1,6 +1,7 @@
 class JudoClassesController < ApplicationController
-  before_action :set_judo_class, only: [:show, :edit, :update, :destroy]
+  
 
+  before_action :set_judo_class, only: [:show, :edit, :update, :destroy]
   # GET /judo_classes
   # GET /judo_classes.json
   def index
@@ -24,9 +25,13 @@ class JudoClassesController < ApplicationController
   # POST /judo_classes
   # POST /judo_classes.json
   def create
+  
     @judo_class = JudoClass.new(judo_class_params)
 
     respond_to do |format|
+	
+	
+	
       if @judo_class.save
         format.html { redirect_to @judo_class, notice: 'Judo class was successfully created.' }
         format.json { render :show, status: :created, location: @judo_class }
@@ -34,6 +39,7 @@ class JudoClassesController < ApplicationController
         format.html { render :new }
         format.json { render json: @judo_class.errors, status: :unprocessable_entity }
       end
+	
     end
   end
   
