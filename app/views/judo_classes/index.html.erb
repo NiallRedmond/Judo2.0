@@ -27,8 +27,9 @@
         <td><%= judo_class.time %></td>
         <td><%= judo_class.teacher_name %></td>
         <td><%= link_to 'Show', judo_class %></td>
-        <td><%= link_to 'Edit', edit_judo_class_path(judo_class) %></td>
 		<% if admin? %>
+        <td><%= link_to 'Edit', edit_judo_class_path(judo_class) %></td>
+		
         <td><%= link_to 'Destroy', judo_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 		<% end %>
       </tr>

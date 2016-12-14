@@ -3,6 +3,13 @@ class MatchesController < ApplicationController
   before_action :authorise
   # GET /matches
   # GET /matches.json
+  
+  
+  def matchWin(student_id)
+	@student = Student.find(student_id)
+	Student.increment_counter(:score, @student.id)
+  end
+  
   def index
     @matches = Match.all
   end
@@ -27,6 +34,11 @@ class MatchesController < ApplicationController
  
     @match = Match.new(match_params)
 
+	if @match.result == true #so if result is 'true' then the 'student' won, and I increment their score
+		matchWin(@match.student_id)
+	else
+		matchWin(@match.opponent)#if the opponent won I increment that students score
+	end
     respond_to do |format|
       if @match.save
 	  		

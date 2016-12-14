@@ -1,6 +1,9 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
+	
+  
+  
   # GET /students
   # GET /students.json
   def index
@@ -61,6 +64,7 @@ class StudentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
