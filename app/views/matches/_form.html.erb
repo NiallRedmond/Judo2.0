@@ -16,10 +16,14 @@
     <%= f.label :match_name %><br>
     <%= f.text_field :match_name %>
   </div>
-<div class="field">
-    <%= f.label :OpponentLose? %><br>
-    <%= f.check_box :result %>
+  
+    <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
   </div>
+  
+  
+
   <div class="field">
     <%= f.label :match_points %><br>
     <%= f.number_field :match_points %>
@@ -36,6 +40,10 @@
 	<%= f.collection_select :opponent, Student.all, :id, :student_name %> 
   </div>
   <div class="actions">
+  <div class="field">
+    <%= f.label :OpponentLose? %><br>
+    <%= f.check_box :result %>
+  </div>
     <%= f.submit %>
   </div>
 <% end %>

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'pages/about'
   
   get 'pages/shoulder_throw'
+  
+  get 'challenge', :to=>'usermailer#challenge'
 
   resources :students
 

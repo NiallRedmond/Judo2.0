@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161009134254) do
+ActiveRecord::Schema.define(version: 20161214170006) do
 
   create_table "comments", force: true do |t|
     t.text     "content"
@@ -38,6 +38,10 @@ ActiveRecord::Schema.define(version: 20161009134254) do
     t.integer  "student_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "opponent"
+    t.text     "address"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "students", force: true do |t|

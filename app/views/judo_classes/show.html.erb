@@ -1,38 +1,45 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Belt level:</strong>
-  <%= @judo_class.belt_level %>
-</p>
 
-<p>
-  <strong>Class name:</strong>
-  <%= @judo_class.class_name %>
-</p>
 
-<p>
-  <strong>Day:</strong>
-  <%= @judo_class.day %>
-</p>
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <th>Belt level:</th>
+	  <th> <%= @judo_class.belt_level %></th>
+    </tr>
+	<tr>
+      <th>Class name:</th>
+	  <th><%= @judo_class.class_name %></th>
+    </tr>
+	<tr>
+      <th>Day:</th>
+	  <th> <%= @judo_class.day %></th>
+    </tr>
+	<tr>
+      <th>Time:</th>
+	  <th><%= @judo_class.time %></th>
+    </tr>
+	<tr>
+      <th>Teacher name:</th>
+	  <th><%= @judo_class.teacher_name %></th>
+    </tr>
+	<tr>
+      <th>Students currently enrolled:</th>
+	  <th><% @judo_class.students.each do |student| %>
+			<br>
+			<%=student.student_name%>
+			 <%end%></th>
+    </tr>
 
-<p>
-  <strong>Time:</strong>
-  <%= @judo_class.time %>
-</p>
+  </tbody>
 
-<p>
-  <strong>Teacher name:</strong>
-  <%= @judo_class.teacher_name %>
-</p>
+</table>
 
-<p>
-<strong>Students currently enrolled:</strong>
-<% @judo_class.students.each do |student| %>
-	<br>
-	<%=student.student_name%>
-<%end%>
 
-</p>
+
+
+
 
 
 <%= link_to 'Edit', edit_judo_class_path(@judo_class) %> |

@@ -11,4 +11,10 @@ class Usermailer < ActionMailer::Base
 
     mail(:to => student.email, :subject => "Welcome to the DIT Judo club!")
   end
+  
+  def challenge(student, opponent)
+	@student = student
+	@opponent = opponent
+	mail(:to => student.email, :subject => "You have been challeneged to a Judo match!")
+  end
 end

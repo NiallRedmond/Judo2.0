@@ -28,6 +28,16 @@
   <%= @match.opposition.student_name %>
 </p>
 
+<p>
+  <strong>Address:</strong>
+  <%= @match.address %>
+</p>
+
+
+
+<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@match.latitude},#{@match.longitude}&markers=#{@match.latitude},#{@match.longitude}&zoom=15&size=640x400&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8",
+              class: 'img-fluid img-rounded'%>
+<br>
 <%= link_to 'Edit', edit_match_path(@match) %> |
 <%= link_to 'Back', matches_path %>
 
