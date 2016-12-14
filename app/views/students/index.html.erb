@@ -8,7 +8,7 @@
 </header>
 
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Student name</th>
@@ -60,5 +60,7 @@
 <%= link_to 'New Student', new_student_path %>
 
 <% else%>
-<h4><i><font color=red>Sorry, you have to be an admin to view this page.</font></i></h4>
+<div class="alert alert-danger" role="alert">
+  <strong>Oh snap!</strong> Sorry, only an admin can view this page!
+</div>
 <% end %>

@@ -1,56 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Student name:</strong>
-  <%= @student.student_name %>
-</p>
+
 
 <p>
-  <strong>Email:</strong>
-  <%= @student.email %>
-</p>
-
-<p>
-  <strong>Dob:</strong>
-  <%= @student.dob %>
-</p>
-
-<p>
-    <strong>Age:</strong>
-    <%= @student.age %>
-</p>
-
-<p>
-  <strong>Belt:</strong>
-  <%= @student.belt %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <% if @student.gender == false %>
-	<% gen = 'male'%>
-	<%= gen %>
-  <% else %>
-  <% gen = 'female'%>
-	<%= gen %>
-  <%end%>
-</p>
-
-<p>
-  <strong>Photo:</strong>
+  <strong>PHOTO//TODO:</strong>
    <%= image_tag(@student.photo, :alt => "No image uploaded", :size => "64x64") %>
 </p>
-
-<p>
-  <strong>Score:</strong>
-  <%= @student.score %>
-</p>
-
-<p>
-  <strong>Judo class:</strong>
-  <%= @student.judo_class.class_name %>
-</p>
-
 
 
 <p>
@@ -60,6 +15,53 @@
 <%end%>
 
 </p>
+
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <th><strong>Student name:</strong></th>
+	  <th> <%= @student.student_name %></th>
+    </tr>
+	<tr>
+      <th><strong>Email:</strong></th>
+	  <th><%= @student.email %></th>
+    </tr>
+	<tr>
+      <th> <strong>Dob:</strong></th>
+	  <th> <%= @student.dob %></th>
+    </tr>
+	<tr>
+      <th><strong>Age:</strong></th>
+	  <th><%= @student.age %></strong></th>
+    </tr>
+	<tr>
+      <th> <strong>Belt:</strong></th>
+	  <th><%= @student.belt %></th>
+    </tr>
+	<tr>
+      <th>  <strong>Gender:</strong></th>
+	  <th><% if @student.gender == false %>
+			<% gen = 'male'%>
+			<%= gen %>
+			<% else %>
+			<% gen = 'female'%>
+			<%= gen %>
+		<%end%></th>
+    </tr>
+	<tr>
+      <th> <strong>Score:</strong></th>
+	  <th><%= @student.score %></th>
+    </tr>
+	<tr>
+      <th>  <strong>Judo class:</strong></th>
+	  <th> <%= @student.judo_class.class_name %></th>
+    </tr>
+  </tbody>
+
+</table>
+
+
+
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>

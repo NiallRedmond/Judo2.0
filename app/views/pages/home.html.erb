@@ -5,22 +5,15 @@
 <body>
 
 
-<div>
-	<p>New User?<%=link_to "Sign up now!", new_student_path%></p>
+<div class="alert alert-success" role="alert">
+  <strong>New User?</strong><%=link_to "Sign up now!", new_student_path%>
 </div>
-
-<div>
-	<Strong>Post a match:</strong>
+<div class="alert alert-success" role="alert">
+ 	<Strong>Post a match:</strong>
 	<%= link_to 'New Match', new_match_path %>
 </div>
 
-<div>
-	<br>
-	Search Judo classes, enter a belt level:<%= render 'judo_classes/search' %>
-	<br>
-	
 
-</div>
 
 <div id="slideshow" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->

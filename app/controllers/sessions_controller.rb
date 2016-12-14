@@ -7,7 +7,8 @@ def create
 	  
 	 if student && student.authenticate(params[:password])
 		session[:student_id] = student.id
-		redirect_to student
+		# redirect_to student
+		redirect_to session[:return_to] || root_path
 	else
 		render'new'
 		flash.now[:error] = "Invalid user name/password."

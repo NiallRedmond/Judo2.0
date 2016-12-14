@@ -41,10 +41,16 @@
     <%= f.label :photo %><br>
     <%= f.text_field :photo %>
   </div>
+    <div class="alert alert-info">
+  <strong>Info!</strong> In judo, you gain a 'point' for winning a match. A certain number of points is one of the requirements to progress to next belt level.<br>
+   Put how many points you currently have in score below. Of course a student could lie about their points, but this website is meant to only<br>record points, not police them. Judo Ireland keeps track of that.
+</div>
+  
   <div class="field">
     <%= f.label :score %><br>
     <%= f.number_field :score %>
   </div>
+
   <div class="field">
     <%= f.label :judo_class_id %><br>
 
