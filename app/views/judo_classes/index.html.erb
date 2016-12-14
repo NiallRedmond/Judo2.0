@@ -20,6 +20,8 @@
       <th colspan="3"></th>
     </tr>
   </thead>
+  
+
 
   <tbody>
     <% @judo_classes.each do |judo_class| %>
@@ -27,8 +29,11 @@
         <td><%= judo_class.belt_level %></td>
         <td><%= judo_class.class_name %></td>
         <td><%= judo_class.day %></td>
-        <td><%= judo_class.time %></td>
-        <td><%= judo_class.teacher_name %></td>
+        <td><%t = judo_class.time%>	
+			<%= t.strftime("%I:%M%p") %>
+		</td>
+        <td><%= judo_class.teacher_name %>		
+		</td>
         <td><%= link_to 'Show', judo_class %></td>
 		<% if admin? %>
         <td><%= link_to 'Edit', edit_judo_class_path(judo_class) %></td>
@@ -40,6 +45,9 @@
   </tbody>
 </table>
 
+<% if admin? %>
+<%= link_to 'New Judo_class', new_judo_class_path %>
+<%end%>
 <br>
 
 <div class="alert alert-info" role="alert">

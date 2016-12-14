@@ -22,6 +22,10 @@ Rails.application.routes.draw do
 		resources :comments
    end
   
+  	resources :matches do
+		put :challenge
+   end
+  
   	controller :sessions do	
 		get 'login' => :new
 		post 'login' => :create

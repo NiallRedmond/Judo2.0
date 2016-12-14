@@ -16,7 +16,6 @@
       <th>Dob</th>
       <th>Belt</th>
       <th>Gender</th>
-      <th>Photo</th>
       <th>Score</th>
       <th>Judo class</th>
       
@@ -31,14 +30,13 @@
         <td><%= student.email %></td>
         <td><%= student.dob %></td>
         <td><%= student.belt %></td>
-        <td>   <% if student.gender == false %>
-	<% gen = 'male'%>
-	<%= gen %>
-  <% else %>
-  <% gen = 'female'%>
-	<%= gen %>
-  <%end%> </td>
-        <td><%= student.photo %></td>
+        <td><% if student.gender == false %>
+				<% gen = 'male'%>
+				<%= gen %>
+				<% else %>
+				<% gen = 'female'%>
+				<%= gen %>
+			<%end%> </td>
         <td><%= student.score %></td>
         <td><%= student.judo_class.class_name %></td>
         

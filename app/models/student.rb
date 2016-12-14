@@ -6,7 +6,7 @@ class Student < ActiveRecord::Base
 	has_many :comments
 	
 	validates :student_name, presence: true
-	# validates_uniqueness_of :email
+	validates_uniqueness_of :email
 	validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/}
 	validates :dob, presence: true
 	validates :password ,:length => {:within => 4..40}

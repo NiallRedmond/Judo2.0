@@ -1,37 +1,43 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Match name:</strong>
-  <%= @match.match_name %>
-</p>
 
-<p>
-  <strong>Victor:</strong>
-  <% if @match.result == true %>
-  <%=@match.student.student_name%>
-  <% else %>
-  <%= @match.opposition.student_name %>
-  <% end %>
-</p>
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <th>Match name:</th>
+	  <th> <%= @match.match_name %></th>
+    </tr>
+	<tr>
+      <th>Victor:</th>
+	  <th>  
+		<% if @match.result == true %>
+			<%=@match.student.student_name%>
+		<% else %>
+			<%= @match.opposition.student_name %>
+		<% end %>
+	  </th>
+    </tr>
+	<tr>
+      <th>Match points:</th>
+	  <th> <%= @match.match_points %></th>
+    </tr>
+	<tr>
+      <th>Student:</th>
+	  <th><%= @match.student.student_name %></strong></th>
+    </tr>
+	<tr>
+      <th>Opponent:</th>
+	  <th><%= @match.opposition.student_name %></th>
+    </tr>
+	<tr>
+      <th> Address:</th>
+	  <th><%= @match.address %></th>
+    </tr>
 
-<p>
-  <strong>Match points:</strong>
-  <%= @match.match_points %>
-</p>
+  </tbody>
 
-<p>
-  <strong>Student:</strong>
-  <%= @match.student.student_name %>
-</p>
-<p>
-  <strong>Opponent:</strong>
-  <%= @match.opposition.student_name %>
-</p>
+</table>
 
-<p>
-  <strong>Address:</strong>
-  <%= @match.address %>
-</p>
 
 
 

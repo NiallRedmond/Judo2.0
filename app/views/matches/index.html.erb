@@ -11,7 +11,7 @@
   <thead>
     <tr>
       <th>Match name</th>
-      <th>Victory</th>
+      <th>Victor</th>
       <th>Points</th>
 
 
@@ -24,9 +24,11 @@
       <tr>
         <td><%= match.match_name %></td>
         <td>
-		<% if match.result == true %>
-		<%= match.match_name %>
-		<%end%>
+		  <% if match.result == true %>
+		  <%= match.student.student_name%>
+		  <% else %>
+		  <%= match.opposition.student_name %>
+		  <% end %>
 		</td>
         <td><%= match.match_points %></td>
 
